@@ -1,6 +1,4 @@
-//retarget.c: interface between CRT and retargeting code
-//#include "retarget.conf"
-
+//retarget/retarget
 #include <stdio.h>
 #include <rt_misc.h>
 
@@ -13,7 +11,10 @@ extern void tx_flush(void);
 extern char rx(void);
 extern void un_rx(void);
 
-struct __FILE { int handle; };
+struct __FILE {
+    int handle;
+    void* data;
+};
 FILE __stdout;
 FILE __stdin;
 FILE __stderr;
