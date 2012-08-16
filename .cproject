@@ -34,6 +34,8 @@
 									<listOptionValue builtIn="false" value="STM32F10X_HD"/>
 									<listOptionValue builtIn="false" value="ARM_MATH_CM3"/>
 									<listOptionValue builtIn="false" value="__GNUC__"/>
+									<listOptionValue builtIn="false" value="&quot;int64_t=signed long long&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;uint64_t=unsigned long long&quot;"/>
 								</option>
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.960377923" languageId="org.eclipse.cdt.core.assembly" languageName="Assembly" sourceContentType="org.eclipse.cdt.core.asmSource" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>
@@ -51,6 +53,8 @@
 									<listOptionValue builtIn="false" value="STM32F10X_HD"/>
 									<listOptionValue builtIn="false" value="ARM_MATH_CM3"/>
 									<listOptionValue builtIn="false" value="__GNUC__"/>
+									<listOptionValue builtIn="false" value="&quot;int64_t=signed long long&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;uint64_t=unsigned long long&quot;"/>
 								</option>
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.864840948" languageId="org.eclipse.cdt.core.g++" languageName="GNU C++" sourceContentType="org.eclipse.cdt.core.cxxSource,org.eclipse.cdt.core.cxxHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>
@@ -68,6 +72,8 @@
 									<listOptionValue builtIn="false" value="STM32F10X_HD"/>
 									<listOptionValue builtIn="false" value="ARM_MATH_CM3"/>
 									<listOptionValue builtIn="false" value="__GNUC__"/>
+									<listOptionValue builtIn="false" value="&quot;int64_t=signed long long&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;uint64_t=unsigned long long&quot;"/>
 								</option>
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.980756791" languageId="org.eclipse.cdt.core.gcc" languageName="GNU C" sourceContentType="org.eclipse.cdt.core.cSource,org.eclipse.cdt.core.cHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>

@@ -4,7 +4,7 @@
 
 #include "misc.hpp"
 
-void pinout_init() INIT_FUNC;
+void pinout_init() AUTORUN;
 
 
 

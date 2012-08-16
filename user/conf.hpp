@@ -2,13 +2,8 @@
 #ifndef _CONF_HPP_
 #define _CONF_HPP_
 
-#include "common.hpp"
-
-
-
-
-//Global setting: IRQ priority grouping
-const U8 IRQ_priority_grouping=4;
+#include "misc.hpp"
+#include "pinout.hpp"
 
 
 
@@ -36,22 +31,5 @@ CONV(Thms, U32, 500, Tus);  CONV(Tms, U32, 1000, Tus);  CONV(Ts, U32, 1000000, T
 CONV(Tus, U32, 72, Tk);     CONV(Thms, U32, 36000, Tk); CONV(Tms, U32, 72000, Tk);  CONV(Ts, U32, 72000000, Tk);
 
 #undef CONV
-
-
-
-
-//Derived parameters
-
-
-
-
-//Software limits
-
-
-
-
-//Always chain-include pinout
-#include "pinout.hpp"
-
 
 #endif//_CONF_HPP_
