@@ -3,14 +3,19 @@
 using namespace std;
 
 #include "rtl.h"
-#include "interface.hpp"
+
+#include "conf.hpp"
+#include "misc.hpp"
+
+
+
+
+__task void main_task(){
+	wait_ms(1000);
+	//TODO: Initialize and launch other tasks
+	os_tsk_delete_self();
+}
 
 int main(){
-    printf(
-            "\x55\xaa\x55\xaa\x55\xaa\x55\xaa\r\n\r\n"
-            "RESET\r\n"
-            "<project-name>\r\n"
-            "Build time: " __DATE__ " " __TIME__ "\r\n\r\n"
-    );
-    os_sys_init_prio(interface_task, interface_prio);
+	os_sys_init_prio(main_task, 0xFE);
 }
