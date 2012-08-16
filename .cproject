@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="0.187030434">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="0.187030434" moduleId="org.eclipse.cdt.core.settings" name="Default">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.VCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration buildProperties="" description="" id="0.187030434" name="Default" parent="org.eclipse.cdt.build.core.prefbase.cfg">
+					<folderInfo id="0.187030434." name="/" resourcePath="">
+						<toolChain id="org.eclipse.cdt.build.core.prefbase.toolchain.419128561" name="No ToolChain" resourceTypeBasedDiscovery="false" superClass="org.eclipse.cdt.build.core.prefbase.toolchain">
+							<targetPlatform id="org.eclipse.cdt.build.core.prefbase.toolchain.419128561.1491271157" name=""/>
+							<builder command="build.cmd" id="org.eclipse.cdt.build.core.settings.default.builder.387655952" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="org.eclipse.cdt.build.core.settings.default.builder"/>
+							<tool id="org.eclipse.cdt.build.core.settings.holder.libs.367505177" name="holder for library settings" superClass="org.eclipse.cdt.build.core.settings.holder.libs"/>
+							<tool id="org.eclipse.cdt.build.core.settings.holder.1417790269" name="Assembly" superClass="org.eclipse.cdt.build.core.settings.holder">
+								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.1167973936" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;D:\usr\Keil\ARM\INC&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;d:\usr\Keil\ARM\Startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\usr\Keil\ARM\RV31\INC&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\usr\Keil\ARM\CMSIS&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\usr\Keil\ARM\INC\ST\STM32F10x&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\usr\Keil\ARM\Startup\ST\STM32F10x&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\usr\Keil\ARM\CMSIS\Include&quot;"/>
+								</option>
+								<option id="org.eclipse.cdt.build.core.settings.holder.symbols.1152124333" name="Symbols" superClass="org.eclipse.cdt.build.core.settings.holder.symbols" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="STM32F10X_HD"/>
+									<listOptionValue builtIn="false" value="ARM_MATH_CM3"/>
+									<listOptionValue builtIn="false" value="__GNUC__"/>
+								</option>
+								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.960377923" languageId="org.eclipse.cdt.core.assembly" languageName="Assembly" sourceContentType="org.eclipse.cdt.core.asmSource" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
+							</tool>
+							<tool id="org.eclipse.cdt.build.core.settings.holder.1743070491" name="GNU C++" superClass="org.eclipse.cdt.build.core.settings.holder">
+								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.1350834216" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;D:\usr\Keil\ARM\INC&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;d:\usr\Keil\ARM\Startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\usr\Keil\ARM\RV31\INC&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\usr\Keil\ARM\CMSIS&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\usr\Keil\ARM\INC\ST\STM32F10x&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\usr\Keil\ARM\Startup\ST\STM32F10x&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\usr\Keil\ARM\CMSIS\Include&quot;"/>
+								</option>
+								<option id="org.eclipse.cdt.build.core.settings.holder.symbols.1043921261" name="Symbols" superClass="org.eclipse.cdt.build.core.settings.holder.symbols" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="STM32F10X_HD"/>
+									<listOptionValue builtIn="false" value="ARM_MATH_CM3"/>
+									<listOptionValue builtIn="false" value="__GNUC__"/>
+								</option>
+								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.864840948" languageId="org.eclipse.cdt.core.g++" languageName="GNU C++" sourceContentType="org.eclipse.cdt.core.cxxSource,org.eclipse.cdt.core.cxxHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
+							</tool>
+							<tool id="org.eclipse.cdt.build.core.settings.holder.1328440096" name="GNU C" superClass="org.eclipse.cdt.build.core.settings.holder">
+								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.1455999608" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;D:\usr\Keil\ARM\INC&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;d:\usr\Keil\ARM\Startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\usr\Keil\ARM\RV31\INC&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\usr\Keil\ARM\CMSIS&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\usr\Keil\ARM\INC\ST\STM32F10x&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\usr\Keil\ARM\Startup\ST\STM32F10x&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\usr\Keil\ARM\CMSIS\Include&quot;"/>
+								</option>
+								<option id="org.eclipse.cdt.build.core.settings.holder.symbols.1541628516" name="Symbols" superClass="org.eclipse.cdt.build.core.settings.holder.symbols" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="STM32F10X_HD"/>
+									<listOptionValue builtIn="false" value="ARM_MATH_CM3"/>
+									<listOptionValue builtIn="false" value="__GNUC__"/>
+								</option>
+								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.980756791" languageId="org.eclipse.cdt.core.gcc" languageName="GNU C" sourceContentType="org.eclipse.cdt.core.cSource,org.eclipse.cdt.core.cHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="main.null.636040347" name="main"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="0.187030434">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Default">
+			<resource resourceType="PROJECT" workspacePath="/main"/>
+		</configuration>
+	</storageModule>
+</cproject>

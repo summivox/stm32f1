@@ -1,0 +1,17 @@
+#remove temporary files
+*.swp
+*.bak
+*.asv
+
+#remove uVision4 output
+*_debug/
+*_release/
+*.uvgui.*
+JLink*
+*.pch
+*.dep
+build.cmd
+trace.dat
+
+#common
+[Tt]humbs.db
