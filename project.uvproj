@@ -348,7 +348,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD, ARM_MATH_CM3</Define>
               <Undefine></Undefine>
-              <IncludePath>bnj_stm32, system, retarget, user</IncludePath>
+              <IncludePath>.</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -512,50 +512,6 @@
               </FileOption>
             </File>
             <File>
-              <FileName>misc.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\user\misc.cpp</FilePath>
-              <FileOption>
-                <CommonProperty>
-                  <UseCPPCompiler>2</UseCPPCompiler>
-                  <RVCTCodeConst>0</RVCTCodeConst>
-                  <RVCTZI>0</RVCTZI>
-                  <RVCTOtherData>0</RVCTOtherData>
-                  <ModuleSelection>0</ModuleSelection>
-                  <IncludeInBuild>2</IncludeInBuild>
-                  <AlwaysBuild>2</AlwaysBuild>
-                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
-                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
-                  <PublicsOnly>2</PublicsOnly>
-                  <StopOnExitCode>11</StopOnExitCode>
-                  <CustomArgument></CustomArgument>
-                  <IncludeLibraryModules></IncludeLibraryModules>
-                </CommonProperty>
-                <FileArmAds>
-                  <Cads>
-                    <interw>2</interw>
-                    <Optim>0</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <VariousControls>
-                      <MiscControls>--use_pch=stdafx.pch</MiscControls>
-                      <Define></Define>
-                      <Undefine></Undefine>
-                      <IncludePath></IncludePath>
-                    </VariousControls>
-                  </Cads>
-                </FileArmAds>
-              </FileOption>
-            </File>
-            <File>
               <FileName>misc.hpp</FileName>
               <FileType>5</FileType>
               <FilePath>.\user\misc.hpp</FilePath>
@@ -608,6 +564,36 @@
               <FileName>pinout.hpp</FileName>
               <FileType>5</FileType>
               <FilePath>.\user\pinout.hpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>helper</GroupName>
+          <Files>
+            <File>
+              <FileName>irq.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\helper\irq.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>rtx.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\helper\rtx.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>retarget</GroupName>
+          <Files>
+            <File>
+              <FileName>retarget.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\retarget\retarget.c</FilePath>
+            </File>
+            <File>
+              <FileName>retarget_impl.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\retarget\retarget_impl.cpp</FilePath>
             </File>
           </Files>
         </Group>

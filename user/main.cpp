@@ -20,9 +20,12 @@ __task void main_task(){
 	Exti<13>::set_falling();
 	PF13.set_exti();
 	NVIC_EnableIRQ(EXTI15_10_IRQn);
+	
+	printf("\r\nHello World!\r\n");
 
 	wait_ms(1000);
 	//TODO: Initialize and launch other tasks
+	
 	os_tsk_delete_self();
 }
 
