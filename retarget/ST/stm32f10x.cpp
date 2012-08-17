@@ -12,57 +12,65 @@
 
 extern "C" void rt_entry_impl(){
     FREQ.update();
-#if     USART1_EN==1
+#if USART1_EN==1
     USART1_init();
 #endif//USART1_EN
 };
 
 extern "C" int fputc_impl(int ch, __FILE* f){
     if(f->handle==-1){
+#if USART1_TX_EN==1
         if((U32)(f->data)==0){
-#if USART1_TX_BUF_EN==1
+#	if USART1_TX_BUF_EN==1
             USART1_TX_buf(ch);
-#else//USART1_TX_BUF_EN
+#	else//USART1_TX_BUF_EN
 			USART1_TX_unbuf(ch);
-#endif//USART1_TX_BUF_EN
+#	endif//USART1_TX_BUF_EN
 			return ch;
         }else{
             USART1_TX_unbuf(ch);
 			return ch;
         }
+#endif//USART1_TX_EN
     }
     return EOF;
 }
 
 extern "C" int fflush_impl(__FILE* f){
     if(f->handle==-1){
+#if USART1_TX_EN==1
         if((U32)(f->data)==0){
-#if USART1_TX_BUF_EN==1
+#	if USART1_TX_BUF_EN==1
             USART1_flush_buf();
-#else//USART1_TX_BUF_EN
+#	else//USART1_TX_BUF_EN
 			USART1_flush_unbuf();
-#endif//USART1_TX_BUF_EN
+#	endif//USART1_TX_BUF_EN
         }else{
             USART1_flush_unbuf();
         }
+#endif//USART1_TX_EN
     }
     return 0;
 }
 
 extern "C" int fgetc_impl(__FILE* f){
     if(f->handle==-1){
+#if USART1_RX_EN==1
         if((U32)(f->data)==1){
             return USART1_RX();
         }
+#endif//USART1_RX_EN
     }
     return EOF;
 }
 
 extern "C" int backspace_impl(__FILE* f){
     if(f->handle==-1){
+#if USART1_RX_EN==1
         if((U32)(f->data)==1){
             USART1_BS();
         }
+#endif//USART1_RX_EN
     }
     return 0;
 }
