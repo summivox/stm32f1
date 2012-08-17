@@ -309,7 +309,7 @@
     </File>
     <File>
       <GroupNumber>3</GroupNumber>
-      <FileNumber>9</FileNumber>
+      <FileNumber>8</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -323,7 +323,7 @@
     </File>
     <File>
       <GroupNumber>3</GroupNumber>
-      <FileNumber>10</FileNumber>
+      <FileNumber>9</FileNumber>
       <FileType>8</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -337,7 +337,7 @@
     </File>
     <File>
       <GroupNumber>3</GroupNumber>
-      <FileNumber>11</FileNumber>
+      <FileNumber>10</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -357,29 +357,29 @@
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <File>
-      <GroupNumber>0</GroupNumber>
-      <FileNumber>0</FileNumber>
+      <GroupNumber>4</GroupNumber>
+      <FileNumber>11</FileNumber>
       <FileType>8</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>1</CurrentLine>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\helper\irq.cpp</PathWithFileName>
       <FilenameWithoutPath>irq.cpp</FilenameWithoutPath>
     </File>
     <File>
-      <GroupNumber>0</GroupNumber>
-      <FileNumber>0</FileNumber>
+      <GroupNumber>4</GroupNumber>
+      <FileNumber>12</FileNumber>
       <FileType>8</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>5</CurrentLine>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\helper\rtx.cpp</PathWithFileName>
       <FilenameWithoutPath>rtx.cpp</FilenameWithoutPath>
@@ -392,32 +392,46 @@
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <File>
-      <GroupNumber>0</GroupNumber>
-      <FileNumber>0</FileNumber>
+      <GroupNumber>5</GroupNumber>
+      <FileNumber>13</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>23</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>26</CurrentLine>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\retarget\retarget.c</PathWithFileName>
       <FilenameWithoutPath>retarget.c</FilenameWithoutPath>
     </File>
     <File>
-      <GroupNumber>0</GroupNumber>
+      <GroupNumber>5</GroupNumber>
+      <FileNumber>14</FileNumber>
+      <FileType>8</FileType>
+      <tvExp>0</tvExp>
+      <Focus>0</Focus>
+      <ColumnNumber>58</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>1</TopLine>
+      <CurrentLine>10</CurrentLine>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\retarget\retarget_impl.cpp</PathWithFileName>
+      <FilenameWithoutPath>retarget_impl.cpp</FilenameWithoutPath>
+    </File>
+    <File>
+      <GroupNumber>5</GroupNumber>
       <FileNumber>0</FileNumber>
       <FileType>8</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>30</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
-      <CurrentLine>8</CurrentLine>
+      <CurrentLine>14</CurrentLine>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\retarget\retarget_impl.cpp</PathWithFileName>
-      <FilenameWithoutPath>retarget_impl.cpp</FilenameWithoutPath>
+      <PathWithFileName>.\retarget\ST\stm32f10x.cpp</PathWithFileName>
+      <FilenameWithoutPath>stm32f10x.cpp</FilenameWithoutPath>
     </File>
   </Group>
 

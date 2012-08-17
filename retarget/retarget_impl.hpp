@@ -5,14 +5,26 @@
 
 
 
-struct RetargetImpl{
-    virtual ~RetargetImpl()=0;
+struct RetargetWriteImpl{
+    virtual ~RetargetWriteImpl(){};
 
-    virtual int fputc(int ch)=0;
-    virtual int fflush()=0;
+    virtual int fputc(int ch){
+        return 0;
+    }
+    virtual int fflush(){
+        return 0;
+    }
+};
 
-    virtual int fgetc()=0;
-    virtual void backspace()=0;
+struct RetargetReadImpl{
+    virtual ~RetargetReadImpl(){};
+
+    virtual int fgetc(){
+        return 0;
+    }
+    virtual int backspace(){
+        return 0;
+    }
 };
 
 

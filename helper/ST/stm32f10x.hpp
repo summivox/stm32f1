@@ -9,5 +9,6 @@
 #include "stm32f10x/misc.hpp"
 #include "stm32f10x/gpio.hpp"
 #include "stm32f10x/exti.hpp"
+#include "stm32f10x/freq.hpp"
 
 #endif /* _HELPER_STM32F10X_HPP_ */

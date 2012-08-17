@@ -7,30 +7,35 @@
 
 
 extern "C" int fputc_impl(int ch, void* impl){
-    if(impl){
-        return static_cast<RetargetImpl*>(impl)->fputc(ch);
+    RetargetWriteImpl* p=dynamic_cast<RetargetWriteImpl*>(impl);
+    if(p){
+        return p->fputc(ch);
     }
     return EOF;
 }
 
 extern "C" int fflush_impl(void* impl){
-    if(impl){
-        return static_cast<RetargetImpl*>(impl)->fflush();
+    RetargetWriteImpl* p=dynamic_cast<RetargetWriteImpl*>(impl);
+    if(p){
+        return p->fflush();
     }
     return EOF;
 }
 
 extern "C" int fgetc_impl(void* impl){
-    if(impl){
-        return static_cast<RetargetImpl*>(impl)->fgetc();
+    RetargetReadImpl* p=dynamic_cast<RetargetReadImpl*>(impl);
+    if(p){
+        return p->fgetc();
     }
     return EOF;
 }
 
-extern "C" void __backspace_impl(void* impl){
-    if(impl){
-        return static_cast<RetargetImpl*>(impl)->backspace();
+extern "C" int __backspace_impl(void* impl){
+    RetargetReadImpl* p=dynamic_cast<RetargetReadImpl*>(impl);
+    if(p){
+        return p->backspace();
     }
+	return 0;
 }
 
 extern "C" int fclose_impl(void* impl){
