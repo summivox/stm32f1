@@ -22,11 +22,30 @@ __task void main_task(){
     NVIC_EnableIRQ(EXTI15_10_IRQn);
 
     printf("\r\nHello World!\r\n");
-
+	int a, b;
+	char c;
+	while(1){
+		c=fgetc(stdin);
+		switch(c){
+			case 'a':
+				if(scanf("%d", &a)==1){
+					printf("<a a=\"%d\" />\r\n", a);
+				}
+				break;
+			case 'b':
+				if(scanf("%d %d", &a, &b)==2){
+					printf("<b a=\"%d\" b=\"%d\" />\r\n", a, b);
+				}
+				break;
+		}
+	}
+	
+	/*
     wait_ms(1000);
     //TODO: Initialize and launch other tasks
 
     os_tsk_delete_self();
+	*/
 }
 
 IRQ_DECL(EXTI15_10_IRQn, EXTI15_10_IRQHandler, 5, 0);

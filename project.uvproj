@@ -591,11 +591,6 @@
               <FilePath>.\retarget\retarget.c</FilePath>
             </File>
             <File>
-              <FileName>retarget_impl.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\retarget\retarget_impl.cpp</FilePath>
-            </File>
-            <File>
               <FileName>stm32f10x.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\retarget\ST\stm32f10x.cpp</FilePath>

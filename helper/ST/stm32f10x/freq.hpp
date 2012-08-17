@@ -26,97 +26,105 @@
 #define CFGR_ADCPRE_Reset_Mask    0xFFFF3FFFu
 #define CFGR_ADCPRE_Set_Mask      0x0000C000u
 
-struct Freq{
-    static U32 SYSCLK;
-    static U32 HCLK;
-    static U32 PCLK1;
-    static U32 PCLK2;
-    static U32 ADCCLK;
+//NOTE: Local to every source file (to avoid having to add another deeply buried source file).
+//Always update before use.
+namespace{
+    struct FreqImpl1{
+        struct FreqImpl2{
+            U32 SYSCLK;
+            U32 HCLK;
+            U32 PCLK1;
+            U32 PCLK2;
+            U32 ADCCLK;
+            void update(){
+                static const U8 APBAHBPrescTable[16] = {0, 0, 0, 0, 1, 2, 3, 4, 1, 2, 3, 4, 6, 7, 8, 9};
+                static const U8 ADCPrescTable[4] = {2, 4, 6, 8};
 
-    static void update(){
-        static const U8 APBAHBPrescTable[16] = {0, 0, 0, 0, 1, 2, 3, 4, 1, 2, 3, 4, 6, 7, 8, 9};
-        static const U8 ADCPrescTable[4] = {2, 4, 6, 8};
+                U32 tmp = 0, pllmull = 0, pllsource = 0, presc = 0;
 
-        U32 tmp = 0, pllmull = 0, pllsource = 0, presc = 0;
+                /* Get SYSCLK source -------------------------------------------------------*/
+                tmp = RCC->CFGR & CFGR_SWS_Mask;
 
-        /* Get SYSCLK source -------------------------------------------------------*/
-        tmp = RCC->CFGR & CFGR_SWS_Mask;
+                switch (tmp)
+                {
+                    case 0x00:  /* HSI used as system clock */
+                        SYSCLK = HSI_VALUE;
+                        break;
 
-        switch (tmp)
-        {
-            case 0x00:  /* HSI used as system clock */
-                SYSCLK = HSI_VALUE;
-                break;
+                    case 0x04:  /* HSE used as system clock */
+                        SYSCLK = HSE_VALUE;
+                        break;
 
-            case 0x04:  /* HSE used as system clock */
-                SYSCLK = HSE_VALUE;
-                break;
+                    case 0x08:  /* PLL used as system clock */
+                        /* Get PLL clock source and multiplication factor ----------------------*/
+                        pllmull = RCC->CFGR & CFGR_PLLMull_Mask;
+                        pllmull = ( pllmull >> 18) + 2;
 
-            case 0x08:  /* PLL used as system clock */
-                /* Get PLL clock source and multiplication factor ----------------------*/
-                pllmull = RCC->CFGR & CFGR_PLLMull_Mask;
-                pllmull = ( pllmull >> 18) + 2;
+                        pllsource = RCC->CFGR & CFGR_PLLSRC_Mask;
 
-                pllsource = RCC->CFGR & CFGR_PLLSRC_Mask;
+                        if (pllsource == 0x00)
+                        {/* HSI oscillator clock divided by 2 selected as PLL clock entry */
+                            SYSCLK = (HSI_VALUE >> 1) * pllmull;
+                        }
+                        else
+                        {/* HSE selected as PLL clock entry */
 
-                if (pllsource == 0x00)
-                {/* HSI oscillator clock divided by 2 selected as PLL clock entry */
-                    SYSCLK = (HSI_VALUE >> 1) * pllmull;
+                            if ((RCC->CFGR & CFGR_PLLXTPRE_Mask) != (U32)RESET)
+                            {/* HSE oscillator clock divided by 2 */
+
+                                SYSCLK = (HSE_VALUE >> 1) * pllmull;
+                            }
+                            else
+                            {
+                                SYSCLK = HSE_VALUE * pllmull;
+                            }
+                        }
+                        break;
+
+                    default:
+                        SYSCLK = HSI_VALUE;
+                        break;
                 }
-                else
-                {/* HSE selected as PLL clock entry */
 
-                    if ((RCC->CFGR & CFGR_PLLXTPRE_Mask) != (U32)RESET)
-                    {/* HSE oscillator clock divided by 2 */
+                /* Compute HCLK, PCLK1, PCLK2 and ADCCLK clocks frequencies ----------------*/
+                /* Get HCLK prescaler */
+                tmp = RCC->CFGR & CFGR_HPRE_Set_Mask;
+                tmp = tmp >> 4;
+                presc = APBAHBPrescTable[tmp];
 
-                        SYSCLK = (HSE_VALUE >> 1) * pllmull;
-                    }
-                    else
-                    {
-                        SYSCLK = HSE_VALUE * pllmull;
-                    }
-                }
-                break;
+                /* HCLK clock frequency */
+                HCLK = SYSCLK >> presc;
 
-            default:
-                SYSCLK = HSI_VALUE;
-                break;
-        }
+                /* Get PCLK1 prescaler */
+                tmp = RCC->CFGR & CFGR_PPRE1_Set_Mask;
+                tmp = tmp >> 8;
+                presc = APBAHBPrescTable[tmp];
 
-        /* Compute HCLK, PCLK1, PCLK2 and ADCCLK clocks frequencies ----------------*/
-        /* Get HCLK prescaler */
-        tmp = RCC->CFGR & CFGR_HPRE_Set_Mask;
-        tmp = tmp >> 4;
-        presc = APBAHBPrescTable[tmp];
+                /* PCLK1 clock frequency */
+                PCLK1 = HCLK >> presc;
 
-        /* HCLK clock frequency */
-        HCLK = SYSCLK >> presc;
+                /* Get PCLK2 prescaler */
+                tmp = RCC->CFGR & CFGR_PPRE2_Set_Mask;
+                tmp = tmp >> 11;
+                presc = APBAHBPrescTable[tmp];
 
-        /* Get PCLK1 prescaler */
-        tmp = RCC->CFGR & CFGR_PPRE1_Set_Mask;
-        tmp = tmp >> 8;
-        presc = APBAHBPrescTable[tmp];
+                /* PCLK2 clock frequency */
+                PCLK2 = HCLK >> presc;
 
-        /* PCLK1 clock frequency */
-        PCLK1 = HCLK >> presc;
+                /* Get ADCCLK prescaler */
+                tmp = RCC->CFGR & CFGR_ADCPRE_Set_Mask;
+                tmp = tmp >> 14;
+                presc = ADCPrescTable[tmp];
 
-        /* Get PCLK2 prescaler */
-        tmp = RCC->CFGR & CFGR_PPRE2_Set_Mask;
-        tmp = tmp >> 11;
-        presc = APBAHBPrescTable[tmp];
-
-        /* PCLK2 clock frequency */
-        PCLK2 = HCLK >> presc;
-
-        /* Get ADCCLK prescaler */
-        tmp = RCC->CFGR & CFGR_ADCPRE_Set_Mask;
-        tmp = tmp >> 14;
-        presc = ADCPrescTable[tmp];
-
-        /* ADCCLK clock frequency */
-        ADCCLK = PCLK2 / presc;
-    }
-};
+                /* ADCCLK clock frequency */
+                ADCCLK = PCLK2 / presc;
+            }
+        };
+        static FreqImpl2 f;
+    };
+    FreqImpl1::FreqImpl2 FreqImpl1::f;
+}
+#define FREQ (FreqImpl1::f)
 
 #undef CFGR_PLL_Mask
 #undef CFGR_PLLMull_Mask

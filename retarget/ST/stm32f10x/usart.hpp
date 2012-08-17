@@ -2,7 +2,6 @@
 #ifndef _RETARGET_ST_STM32F10X_USART_HPP_
 #define _RETARGET_ST_STM32F10X_USART_HPP_
 
-#include "retarget/retarget_impl.hpp"
 #include "helper/ST/stm32f10x.hpp"
 
 
@@ -30,7 +29,7 @@ struct UsartImplBase{
 };
 
 //Unbuffered, blocking TX implementation
-struct UsartTxImpl : virtual UsartImplBase, RetargetWriteImpl{
+struct UsartTxImpl : virtual UsartImplBase{
     explicit UsartTxImpl(USART_TypeDef* USART):UsartImplBase(USART){
         PERIPH_SBIT(USART, USART, CR1, UE)=1;
         PERIPH_SBIT(USART, USART, CR1, TE)=1;
@@ -51,7 +50,7 @@ struct UsartTxImpl : virtual UsartImplBase, RetargetWriteImpl{
 };
 
 //Unbuffered, blocking RX implementation with 1-byte backspace support
-struct UsartRxImpl : virtual UsartImplBase, RetargetReadImpl{
+struct UsartRxImpl : virtual UsartImplBase{
     bool backspace_flag;
     U8 last;
 

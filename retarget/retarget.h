@@ -13,7 +13,7 @@ extern "C"{
 
     struct __FILE {
         int handle;
-        void* impl;
+        void* data; //points to arbitrary data field / pimpl
     };
 
     extern FILE __stdout;
