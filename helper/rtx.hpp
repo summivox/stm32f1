@@ -34,12 +34,17 @@ struct Pool{
         remaining=N;
     }
     T* allocate(){
+		__disable_irq();
         assert(remaining-->0);
-        return (T*)_alloc_box(pool);
+        T* ret=(T*)_alloc_box(pool);
+		__enable_irq();
+		return ret;
     }
     void deallocate(T* p){
+		__disable_irq();
         assert(!_free_box(pool, p)); //return 1 => error
         ++remaining;
+		__enable_irq();
     }
 };
 
