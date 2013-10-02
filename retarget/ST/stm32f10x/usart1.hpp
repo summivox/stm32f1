@@ -279,7 +279,7 @@ void USART1_ECHO(U8 ch){
 static U8 USART1_RX_BS_count=0;
 U8 USART1_RX(){
     while(USART1_RX_head==(USART1_RX_BUF_SIZE-USART1_RX_DMA_CH->CNDTR)){
-        //idle
+        os_dly_wait(1);
     }
     U8 ret=USART1_RX_pool[USART1_RX_head];
     if(++USART1_RX_head==USART1_RX_BUF_SIZE){
