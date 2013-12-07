@@ -149,6 +149,10 @@ __task void os_idle_demon (void) {
   /* The idle demon is a system task, running when no other task is ready */
   /* to run. The 'os_xxx' function calls are not allowed from this task.  */
 
+  //add hook for initializing thread-safe heap management
+  extern void heap_mut_init(void);
+  heap_mut_init();
+    
   for (;;) {
   /* HERE: include optional user code to be executed when no task runs.*/
   }
