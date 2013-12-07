@@ -1,5 +1,5 @@
 #include "rtl.h"
-#include "stdio.h"
+//#include "stdio.h"
 
 
 ////////////
@@ -20,7 +20,7 @@ void* $Sub$$malloc(size_t n) {
     heap_mut_init();
     os_mut_wait(&heap_mut, 0xFFFF);
     ret = $Super$$malloc(n);
-    printf("$$$ malloc(%u) => 0x%08X\r\n", n, (unsigned)ret); //DEBUG
+    //printf("$$$ malloc(%u) => 0x%08X\r\n", n, (unsigned)ret); //DEBUG
     os_mut_release(&heap_mut);
     return ret;
 }
@@ -30,6 +30,6 @@ void $Sub$$free(void* p) {
     heap_mut_init();
     os_mut_wait(&heap_mut, 0xFFFF);
     $Super$$free(p);
-    printf("$$$ free(0x%08X)\r\n", (unsigned)p); //DEBUG
+    //printf("$$$ free(0x%08X)\r\n", (unsigned)p); //DEBUG
     os_mut_release(&heap_mut);
 }
