@@ -18,10 +18,6 @@ static const U16 FOREVER=0xFFFF;
 //sleep for given duration, blocking
 void wait_ms(U32 Tms);
 
-//thread-safe malloc/free
-void* MALLOC(size_t);
-void FREE(void*);
-
 //simple type-safe wrapper class for RTX memory pool
 //roughly following the naming convention of std::allocator
 //NOTE: DOES NOT construct the object in-place! Only memory is allocated.
