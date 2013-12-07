@@ -136,6 +136,7 @@
             <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
             <RestoreFunctions>0</RestoreFunctions>
             <RestoreToolbox>1</RestoreToolbox>
+            <RestoreTracepoints>0</RestoreTracepoints>
           </Target>
           <RunDebugAfterBuild>0</RunDebugAfterBuild>
           <TargetSelection>7</TargetSelection>
@@ -344,6 +345,7 @@
             <Rwpi>0</Rwpi>
             <wLevel>0</wLevel>
             <uThumb>0</uThumb>
+            <uSurpInc>0</uSurpInc>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD, ARM_MATH_CM3</Define>
@@ -359,6 +361,7 @@
             <SplitLS>0</SplitLS>
             <SwStkChk>0</SwStkChk>
             <NoWarn>0</NoWarn>
+            <uSurpInc>0</uSurpInc>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define></Define>
@@ -442,6 +445,7 @@
                     <Rwpi>2</Rwpi>
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
+                    <uSurpInc>2</uSurpInc>
                     <VariousControls>
                       <MiscControls>--create_pch=stdafx.pch</MiscControls>
                       <Define></Define>
@@ -501,6 +505,7 @@
                     <Rwpi>2</Rwpi>
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
+                    <uSurpInc>2</uSurpInc>
                     <VariousControls>
                       <MiscControls>--use_pch=stdafx.pch</MiscControls>
                       <Define></Define>
@@ -550,6 +555,7 @@
                     <Rwpi>2</Rwpi>
                     <wLevel>0</wLevel>
                     <uThumb>2</uThumb>
+                    <uSurpInc>2</uSurpInc>
                     <VariousControls>
                       <MiscControls>--use_pch=stdafx.pch</MiscControls>
                       <Define></Define>
@@ -579,6 +585,11 @@
               <FileName>rtx.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\helper\rtx.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>rtx_heap.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\helper\rtx_heap.c</FilePath>
             </File>
           </Files>
         </Group>
